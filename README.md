@@ -1,4 +1,4 @@
-# typing-practice
+# mornya-typing-practice
 
 ## Project setup
 ```

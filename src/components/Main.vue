@@ -41,8 +41,8 @@
   export default class Main extends Vue {
     @Prop() private wordData: string[];
 
-    private startTime?: Date;
-    private endTime?: Date;
+    private startTime?: Date = null;
+    private endTime?: Date = null;
     private elapsedTime: number = 0;
     private isAllForks: boolean = false;
 
@@ -55,7 +55,7 @@
       if (this.isAllForks) {
         alert('종료되었습니다!');
         this.endTime = new Date();
-        this.elapsedTime = Number(this.endTime.getMilliseconds()) - Number(this.startTime.getMilliseconds());
+        this.elapsedTime = Number(this.endTime) - Number(this.startTime);
       } else {
         alert('아직 모든 텍스트가 입력되지 않았습니다!');
       }
