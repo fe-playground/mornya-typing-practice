@@ -1,5 +1,12 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="hello">
+    <h1>Typing Practice App</h1>
+    <h3>Created by mornya, 2018</h3>
   </div>
 </template>
+
+<script>
+</script>
+
+<style scoped lang="scss">
+</style>
