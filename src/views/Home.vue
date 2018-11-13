@@ -1,6 +1,6 @@
 <template>
   <div class="typing-practice-app">
-    <h1>Typing Practice App</h1>
+    <h1>Typing Practice</h1>
     <div v-if="!isStarted">
       <p>이름을 입력하고 "시작" 버튼을 눌러 타이핑 연습을 시작하세요.</p>
       <div>
@@ -87,24 +87,35 @@ export default {
       this.$validator.validate()
         .then(result => {
           if (result) {
-            alert('시작합니다. 준비하세요!')
+            this.$events.$emit('SHOW_ALERT', {
+              title: '알림',
+              content: '이제 시작합니다.<br/>심호흡을 하고, 시작하세요!',
+              buttons: [
+                { id: 'btn-cancel', label: '기권' },
+                { id: 'btn-ok', label: '쒸작!', isPrimary: true },
+              ],
+              onClick: (selectedId) => {
+                if (selectedId === 'btn-ok') {
+                  // 진행 시작
+                  this.SET_USERNAME(this.username)
+                  this.rankId = new Date().getTime()
 
-            this.SET_USERNAME(this.username)
-            this.rankId = new Date().getTime()
+                  this.isStarted = true
+                  this.startTime = new Date()
 
-            this.isStarted = true
-            this.startTime = new Date()
-
-            this.timerId = setInterval(() => {
-              this.endTime = new Date()
-              this.elapsedTime = Number(this.endTime) - Number(this.startTime)
-              this.SET_RANKING({
-                id: this.rankId,
-                username: this.username,
-                timestamp: this.endTime,
-                elapsed: this.elapsedTime,
-              })
-            }, 1000)
+                  this.timerId = setInterval(() => {
+                    this.endTime = new Date()
+                    this.elapsedTime = Number(this.endTime) - Number(this.startTime)
+                    this.SET_RANKING({
+                      id: this.rankId,
+                      username: this.username,
+                      timestamp: this.endTime,
+                      elapsed: this.elapsedTime,
+                    })
+                  }, 1000)
+                }
+              },
+            })
           }
         })
     },

@@ -34,8 +34,11 @@ export default {
 
         if (this.currentLine >= inputTextRef.length) {
           // 마지막 라인 텍스트를 모두 입력했다면
-          alert('수고하셨습니다. 모두 입력했습니다.\n확인 버튼을 클릭하십시오.')
-          this.setAllForks()
+          this.$events.$emit('SHOW_ALERT', {
+            title: '알림',
+            content: `수고하셨습니다. 모두 입력했습니다.<br/>휴식을 취하십시오.`,
+            onClick: this.setAllForks,
+          })
         } else {
           // 아직 다음 라인이 존재한다면
           inputTextRef[ this.currentLine ].focus()
