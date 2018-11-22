@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>Typing Practice</h1>
+
     <h3>Created by mornya</h3>
     <h4>2018</h4>
     <p><strong style="color:#ee3333">LOVUE</strong> 스터디모임의 무궁한 발전과 영광을 위해!</p>

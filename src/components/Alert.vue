@@ -136,6 +136,7 @@ export default {
 
         & > button {
           flex-grow: 1;
+          margin: 0;
           height: 52px;
           border: 0;
           box-shadow: inset 0 1px 0 0 #ebebeb;
@@ -145,6 +146,7 @@ export default {
 
           &.default {
             background-color: #1a1a1c;
+            font-weight: bold;
             color: #fff;
           }
           &:first-of-type {

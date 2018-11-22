@@ -81,7 +81,7 @@ export default {
 
         & > input {
           box-sizing: border-box;
-          padding: 8px;
+          padding: 20px 10px;
           width: 100%;
           border: 2px solid #0c0;
           border-radius: 4px;

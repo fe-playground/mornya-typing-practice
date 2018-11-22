@@ -1,6 +1,6 @@
 <template>
   <div class="ranking-wrapper">
-    <h1>랭킹 정보</h1>
+    <h2>실시간 랭킹 정보</h2>
     <div class="ranking-inner">
       <ul v-if="ranking.length">
         <li v-for="(item, index) in ranking" :key="`ranking-${index}`">
@@ -8,7 +8,7 @@
           <strong>{{ item.username}}</strong>님... ( {{ item.elapsed / 1000 }}초 )
         </li>
       </ul>
-      <div v-else class="no-ranking-data">:: 아직 랭킹 정보가 없습니다. 새로 도전해 보세요! ::</div>
+      <div v-else class="no-ranking-data">📣 아직 랭킹 정보가 없습니다. 새로 도전해 보세요!</div>
     </div>
   </div>
 </template>
@@ -43,7 +43,6 @@ export default {
         padding: 20px;
         text-align: center;
         font-size: 14px;
-        color: #ec6650;
       }
     }
   }

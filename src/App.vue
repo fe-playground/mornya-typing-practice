@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/signin">Signin</router-link>
     </div>
     <div>
       <router-view/>
@@ -23,8 +23,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   body {
+    padding: 0;
+    margin: 0;
     &.__ui-frozen-body__ {
       position: fixed;
       overflow: hidden;
@@ -43,6 +45,31 @@ export default {
     }
   }
 
+  h1, h2 {
+    color: #42b983;
+    letter-spacing: -.03em;
+  }
+  h1 {
+    font-weight: bold;
+  }
+  h3 {
+    margin: 40px 0 0;
+    text-align: center;
+  }
+  input {
+    padding: 8px 10px;
+    height: 14px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+  }
+  button {
+    margin: 0 2px;
+    padding: 8px 10px;
+    border: 1px solid #cceecc;
+    border-radius: 2px;
+    background-color: #e0ffe0;
+  }
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -54,6 +81,7 @@ export default {
 
   #nav {
     padding: 30px;
+    text-align: right;
     a {
       font-weight: bold;
       color: #2c3e50;
